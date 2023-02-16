@@ -10,12 +10,12 @@ pipeline{
     stage('Test'){
       steps{
         sh './task5'
+        sh 'exit 1' // This will always fail
       }
     }
    stage('Deploy'){
       steps{
         echo 'Deploying'
-        sh 'cat KevinP.txt' -> error
       }
     }
   }
